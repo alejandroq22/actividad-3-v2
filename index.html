@@ -1,0 +1,106 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Indicadores Económicos</title>
+  <link rel="stylesheet" href="node_modules/bootstrap/dist/css/bootstrap.min.css">
+  <link rel="stylesheet" href="styles.css">
+  <link
+    rel="stylesheet"
+    href="https://cdnjs.cloudflare.com/ajax/libs/animate.css/4.1.1/animate.min.css"/>
+</head>
+<body>
+
+    <header>
+        <nav class="navbar navbar-expand-lg navbar-dark bg-dark">
+          <div class="container">
+            <a class="navbar-brand" href="#">Indicadores Económicos</a>
+            <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav" aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
+              <span class="navbar-toggler-icon"></span>
+            </button>
+            <div class="collapse navbar-collapse" id="navbarNav">
+              <ul class="navbar-nav ms-auto">
+                <li class="nav-item">
+                  <a class="nav-link" href="#">Inicio</a>
+                </li>
+                <li class="nav-item">
+                  <a class="nav-link" href="#">Acerca de</a>
+                </li>
+                <li class="nav-item">
+                  <a class="nav-link" href="#">Contacto</a>
+                </li>
+              </ul>
+            </div>
+          </div>
+        </nav>
+      </header>
+
+  <div class="container mt-5">
+    <h1 class="animacion-h1">Indicadores Económicos</h1>
+    <div class="form-group">
+      <label for="indicator-select">Selecciona un indicador:</label>
+      <select id="indicator-select" class="form-control">
+        <option value="" selected disabled>Seleccione un indicador</option>
+        <option value="dolar">Dólar</option>
+        <option value="euro">Euro</option>
+        <option value="utm">UTM</option>
+        <option value="uf">UF</option>
+      </select>
+    </div>
+    <div id="indicator-info" class="mt-4">
+      <!-- Aquí se mostrará la información del indicador seleccionado -->
+    </div>
+    <div id="indicator-chart" class="mt-4">
+        <canvas id="indicator-chart-canvas"></canvas>
+      </div>
+      
+  </div>
+
+  <footer class="bg-light text-center p-3 animacion-footer">
+    <div class="container">
+      <span>&copy; 2023 Indicadores Económicos. Todos los derechos reservados.</span>
+    </div>
+  </footer>
+
+  <script>
+    // Espera a que el documento se haya cargado completamente
+    document.addEventListener("DOMContentLoaded", function(event) {
+      // Obtén una referencia al elemento <h1>
+      var titulo = document.querySelector(".animacion-h1");
+      
+      // Agrega la clase de animación de entrada
+      titulo.classList.add("animate__animated", "animate__slideInUp");
+      
+      // Elimina la clase de animación después de cierto tiempo
+      setTimeout(function() {
+        titulo.classList.remove("animate__animated", "animate__slideInUp");
+      }, 2000); // Cambia el valor 2000 por la duración de la animación en milisegundos
+    });
+  </script>
+
+<script>
+    // Espera a que el documento se haya cargado completamente
+    document.addEventListener("DOMContentLoaded", function(event) {
+      // Obtén una referencia al elemento del footer
+      var footer = document.querySelector(".animacion-footer");
+      
+      // Agrega la clase de animación de entrada
+      footer.classList.add("animate__animated", "animate__slideInUp");
+      
+      // Elimina la clase de animación después de cierto tiempo
+      setTimeout(function() {
+        footer.classList.remove("animate__animated", "animate__slideInUp");
+      }, 2000); // Cambia el valor 2000 por la duración de la animación en milisegundos
+    });
+  </script>
+  
+  
+  
+  <script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
+<script src="https://cdn.jsdelivr.net/npm/axios/dist/axios.min.js"></script>
+<script src="https://cdn.jsdelivr.net/npm/moment/moment.min.js"></script>
+<script src="app.js"></script>
+
+</body>
+</html>
